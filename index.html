@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enrique Suárez Íñiguez · Desarrollador Full-Stack Junior</title>
+  <meta name="description" content="Portfolio de Enrique Suárez Íñiguez, estudiante de 2.º de DAW en U-Tad. Proyectos propios desarrollados de principio a fin: Builted, VETCLINIC y Tragazo.">
+  <meta property="og:title" content="Enrique Suárez Íñiguez · Desarrollador Full-Stack Junior">
+  <meta property="og:description" content="Proyectos propios desarrollados de principio a fin: Builted, VETCLINIC y Tragazo.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://quiquesuarez.github.io/assets/img/enrique.webp">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#proyectos">Saltar a los proyectos</a>
+
+  <header class="hero">
+    <nav class="nav wrap" aria-label="Principal">
+      <a class="brand" href="#inicio">Enrique Suárez</a>
+      <div class="nav-links">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="hero-body wrap" id="inicio">
+      <div class="hero-text">
+        <p class="eyebrow">Desarrollador Full-Stack Junior · 2.º de DAW en U-Tad</p>
+        <h1>Construyo aplicaciones completas, de la base de datos a la publicación.</h1>
+        <p class="lead">Soy Enrique Suárez Íñiguez. Estudio Desarrollo de Aplicaciones Web en Madrid y busco prácticas o una primera oportunidad como desarrollador. Aquí tienes tres de mis proyectos propios.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/enrique-suarez-i%C3%B1iguez">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/Quiquesuarez">GitHub</a>
+        </div>
+      </div>
+      <img class="hero-photo" src="assets/img/enrique.webp" width="640" height="954" alt="Enrique Suárez Íñiguez, con americana azul marino, en una oficina">
+    </div>
+  </header>
+
+  <main>
+    <section id="proyectos" class="projects wrap" aria-labelledby="proyectos-titulo">
+      <div class="section-head">
+        <h2 id="proyectos-titulo">Proyectos</h2>
+        <p>El código de estos proyectos es privado. Si quieres revisarlo, te lo enseño en una entrevista.</p>
+      </div>
+
+      <!-- BUILTED -->
+      <article class="project" id="builted">
+        <header class="project-head">
+          <div>
+            <p class="project-index">01</p>
+            <h3>Builted</h3>
+            <p class="project-tagline">Reformas en Madrid con confianza y control para el cliente y para la empresa</p>
+          </div>
+          <p class="status status-live">Web en piloto · App en revisión en las plataformas</p>
+        </header>
+
+        <div class="project-grid">
+          <div>
+            <h4>El problema</h4>
+            <ul class="pairs">
+              <li><strong>El cliente</strong> persigue a la empresa para saber cómo va la obra, se encuentra costes extra y no tiene claro qué ha pagado.</li>
+              <li><strong>La empresa</strong> teme que no le paguen su trabajo y tiene que ir a cada obra para controlar a su equipo y los avances.</li>
+            </ul>
+            <h4>Qué he construido</h4>
+            <p>Una app con tres perfiles (cliente, empresa y operario) en la que cada avance, cambio y pago queda registrado. La clave es la confianza y el control que da a las dos partes.</p>
+            <ul class="pairs">
+              <li><strong>Para el cliente:</strong> publicar la reforma, comparar ofertas, seguir la obra por fases con partes diarios y chat, y aprobar los extras con firma.</li>
+              <li><strong>Para la empresa:</strong> control operativo desde un solo sitio, con fichajes geolocalizados, PRL, fases y fechas, aprobaciones, constancia de pagos, presupuesto interno y permisos por perfil.</li>
+              <li><strong>Para los dos:</strong> cada pago por hitos lo confirman ambas partes y queda constancia.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Decisiones técnicas</h4>
+            <ul class="decisions">
+              <li><strong>Permisos en la base de datos.</strong> Autenticación de Supabase y seguridad por filas (RLS) en PostgreSQL, para que cada perfil vea solo lo suyo. Por ejemplo, el cliente nunca ve la contabilidad interna de la empresa.</li>
+              <li><strong>Registros que no se retocan.</strong> Ni la propia empresa puede editar o borrar un fichaje, y un hito solo avanza en orden: primero paga el cliente y después confirma la empresa, con la hora del servidor.</li>
+              <li><strong>Un solo código para web y móvil.</strong> La app en React se empaqueta para móvil con Capacitor, con geolocalización y notificaciones push.</li>
+              <li><strong>Pagos de la comisión con Stripe.</strong> Pago integrado en la app, con funciones en el servidor y webhooks. El dinero de la obra no pasa por la plataforma.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="dev-note"><strong>En desarrollo: facturación compatible con VERI*FACTU.</strong> Facturas y rectificativas con numeración sin huecos, huella SHA-256 encadenada, QR tributario y envío de los registros a Hacienda (AEAT), que estoy preparando contra su entorno de pruebas.</p>
+
+        <ul class="chips" aria-label="Tecnologías de Builted">
+          <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Supabase</li><li>PostgreSQL</li><li>Stripe</li><li>Capacitor</li><li>Cloudflare</li><li>Sentry</li>
+        </ul>
+
+        <div class="project-links">
+          <a class="link" href="https://builted.es">Ver la web: builted.es</a>
+          <a class="link" href="https://app.builted.es">Abrir la app: app.builted.es</a>
+        </div>
+
+        <div class="gallery gallery-phone" tabindex="0" role="group" aria-label="Capturas de Builted">
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-cliente-obra.webp" width="520" height="1127" alt="Seguimiento de una reforma de cocina con avance general y fases"></button><figcaption>Seguimiento de obra</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-cliente-ofertas.webp" width="520" height="1129" alt="Comparación de ofertas de dos empresas con precio, plazo y plan de pagos"></button><figcaption>Comparar ofertas</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-cliente-fotos.webp" width="520" height="1129" alt="Partes diarios con texto, nota de voz y fotos de la obra"></button><figcaption>Partes diarios</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-cliente-firma.webp" width="520" height="1129" alt="Aprobación de un coste extra con firma hecha con el dedo"></button><figcaption>Extras con firma</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-cliente-pagos.webp" width="520" height="1129" alt="Pagos por hitos con estado de confirmación"></button><figcaption>Pagos por hitos</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-empresa-demanda.webp" width="520" height="1129" alt="Vista de la empresa con una solicitud de reforma de cocina"></button><figcaption>Demanda para empresas</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-empresa-obra.webp" width="520" height="1129" alt="Vista de la empresa con horas registradas, fotos subidas, cobro confirmado y avance por fases"></button><figcaption>Control de la obra</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/builted-operario-fichaje.webp" width="520" height="1127" alt="Vista del operario con el botón de fichar, la ubicación registrada y el reporte del día"></button><figcaption>Fichaje geolocalizado</figcaption></figure>
+        </div>
+        <p class="note">Capturas con datos de ejemplo. La app pide iniciar sesión.</p>
+      </article>
+
+      <!-- VETCLINIC -->
+      <article class="project" id="vetclinic">
+        <header class="project-head">
+          <div>
+            <p class="project-index">02</p>
+            <h3>VETCLINIC</h3>
+            <p class="project-tagline">Software de gestión para clínicas veterinarias, instalado en el servidor de cada clínica</p>
+          </div>
+          <p class="status">En desarrollo</p>
+        </header>
+
+        <div class="project-grid">
+          <div>
+            <h4>El problema</h4>
+            <p>Una clínica necesita tener al día a sus clientes y a sus mascotas, evitar que se olviden las citas y llevar agenda, inventario y facturación en un mismo sitio, con datos sensibles.</p>
+            <h4>Qué he construido</h4>
+            <ul class="pairs">
+              <li><strong>Avisos automáticos:</strong> correo al cliente 24 horas antes de cada cita y cuando toca la próxima dosis de una vacuna o desparasitación.</li>
+              <li><strong>Control exhaustivo de clientes:</strong> ficha de cada dueño con sus mascotas, notas y preferencias de aviso, y de cada animal con historial clínico, alergias, evolución del peso, vacunas y citas.</li>
+              <li><strong>Gestión de la clínica:</strong> agenda por profesional con arrastrar y soltar, inventario y facturación. Los datos se quedan en el servidor de la clínica.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Decisiones técnicas</h4>
+            <ul class="decisions">
+              <li><strong>El navegador nunca habla con la base de datos.</strong> Todo pasa por el servidor de Next.js, así que en la clínica solo se expone el puerto de la aplicación.</li>
+              <li><strong>Avisos sin duplicados.</strong> La base de datos reserva cada cita y la marca antes de enviar el correo, y los envíos fallidos se reintentan.</li>
+              <li><strong>Permisos probados.</strong> Dos roles con seguridad por filas (RLS) y 79 pruebas automáticas con pgTAP sobre permisos e integridad de los datos.</li>
+              <li><strong>Instalación con un solo comando.</strong> Docker Compose levanta todo. He probado la instalación desde cero, con copia de seguridad y restauración incluidas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="dev-note"><strong>En desarrollo: compatibilidad con VERI*FACTU.</strong> La facturación ya tiene numeración sin huecos, huella SHA-256 encadenada y QR tributario. Falta el envío de los registros a Hacienda (AEAT).</p>
+
+        <ul class="chips" aria-label="Tecnologías de VETCLINIC">
+          <li>Next.js</li><li>React</li><li>TypeScript</li><li>Supabase autoalojado</li><li>PostgreSQL</li><li>Tailwind CSS</li><li>Docker</li><li>pgTAP</li>
+        </ul>
+
+        <div class="gallery gallery-wide" tabindex="0" role="group" aria-label="Capturas de VETCLINIC">
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/vetclinic-inicio.webp" width="1500" height="938" alt="Panel de inicio con citas del día, facturación, vacunas vencidas y stock bajo"></button><figcaption>Panel del día</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/vetclinic-agenda-semana-oscuro.webp" width="1500" height="938" alt="Agenda semanal en modo oscuro con citas por día y hora"></button><figcaption>Agenda semanal</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/vetclinic-paciente.webp" width="1500" height="938" alt="Ficha de un paciente con alergias, historial clínico y próximas dosis"></button><figcaption>Ficha del paciente</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/vetclinic-factura.webp" width="1500" height="938" alt="Factura con conceptos, impuestos, código QR y cobros"></button><figcaption>Facturación</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/vetclinic-inventario.webp" width="1500" height="938" alt="Inventario con existencias, caducidades y productos con stock bajo"></button><figcaption>Inventario</figcaption></figure>
+        </div>
+        <p class="note">Capturas con datos de demostración.</p>
+      </article>
+
+      <!-- TRAGAZO -->
+      <article class="project" id="tragazo">
+        <header class="project-head">
+          <div>
+            <p class="project-index">03</p>
+            <h3>Tragazo</h3>
+            <p class="project-tagline">Juego de fiesta multijugador para móvil, para mayores de 18 años</p>
+          </div>
+          <p class="status">En desarrollo</p>
+        </header>
+
+        <div class="project-grid">
+          <div>
+            <h4>El reto</h4>
+            <p>Que varios móviles jueguen a la vez y vean lo mismo al mismo tiempo, incluso con dos grupos en lugares distintos.</p>
+            <h4>Qué he construido</h4>
+            <p>Una app para iOS y Android con tres modos: un solo móvil, sala con código para que cada jugador use el suyo y una guerra entre dos grupos a distancia, con quiz sincronizado y retos que se validan con foto o vídeo.</p>
+          </div>
+          <div>
+            <h4>Decisiones técnicas</h4>
+            <ul class="decisions">
+              <li><strong>Motor de juego aislado.</strong> Las reglas son lógica pura, separada de la interfaz, y un simulador juega cientos de partidas para probarlas.</li>
+              <li><strong>Tiempo real con Supabase.</strong> Salas online, preguntas sincronizadas entre grupos y seguridad por filas en PostgreSQL.</li>
+              <li><strong>Un solo código para las dos plataformas.</strong> React Native y Expo, con compilación en la nube (EAS) y notificaciones push.</li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="chips" aria-label="Tecnologías de Tragazo">
+          <li>React Native</li><li>Expo</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL</li><li>Zustand</li>
+        </ul>
+
+        <div class="gallery gallery-phone" tabindex="0" role="group" aria-label="Imágenes de Tragazo">
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/tragazo-portada.webp" width="520" height="924" alt="Portada de Tragazo con el logotipo y el aviso para mayores de 18 años"></button><figcaption>Portada</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/tragazo-votos.webp" width="520" height="924" alt="Varios móviles mostrando el mismo reto y la votación de los jugadores"></button><figcaption>Votación en cada móvil</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/tragazo-guerra.webp" width="520" height="924" alt="Pantalla de enfrentamiento entre dos grupos a distancia"></button><figcaption>Guerra de grupos</figcaption></figure>
+          <figure><button type="button" class="zoom"><img loading="lazy" src="assets/img/tragazo-quiz.webp" width="520" height="924" alt="Dos móviles con la misma pregunta de quiz sincronizada"></button><figcaption>Quiz sincronizado</figcaption></figure>
+        </div>
+        <p class="note">Imágenes del vídeo promocional de la app.</p>
+      </article>
+    </section>
+
+    <section id="sobre-mi" class="about" aria-labelledby="sobre-titulo">
+      <div class="wrap about-grid">
+        <div class="about-intro">
+          <h2 id="sobre-titulo">Sobre mí</h2>
+          <p>Antes de programar pasé más de cinco años en atención al cliente, ventas y logística. Esa experiencia me ayuda a entender qué necesita el usuario y a comunicarme bien con el equipo.</p>
+          <p>Ahora termino el ciclo de DAW y dedico mi tiempo libre a construir productos reales.</p>
+          <dl class="langs">
+            <div><dt>Español</dt><dd>Nativo</dd></div>
+            <div><dt>Inglés</dt><dd>C1</dd></div>
+          </dl>
+        </div>
+
+        <div>
+          <h3>Formación</h3>
+          <ul class="timeline">
+            <li><span>En curso (2027)</span><strong>Técnico Superior en Desarrollo de Aplicaciones Web</strong> U-Tad, Las Rozas</li>
+            <li><span>2022 – 2024</span><strong>Estudios de Grado en Administración y Dirección de Empresas</strong> Universidad Rey Juan Carlos</li>
+          </ul>
+          <h3>Experiencia</h3>
+          <ul class="timeline">
+            <li><span>2024 – 2025</span><strong>Dependiente de tienda y mozo de almacén</strong> Inditex (Zara y Zara Home)</li>
+            <li><span>2023 – 2024</span><strong>Encargado de tienda y responsable de ventas</strong> Con Sabor de Amor</li>
+            <li><span>2022 – 2023</span><strong>Administrativo y atención al cliente</strong> CaixaBank, a través de Randstad</li>
+            <li><span>2021 – 2022</span><strong>Repartidor y auxiliar de tienda</strong> Alsea (Domino's Pizza)</li>
+            <li><span>2020 – 2023</span><strong>Conductor repartidor</strong> Félix Courrier</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Tecnologías</h3>
+          <dl class="skills">
+            <div><dt>Lenguajes</dt><dd>JavaScript, TypeScript, Java, Python, C, SQL</dd></div>
+            <div><dt>Web</dt><dd>React, Next.js, HTML5, CSS3, Tailwind CSS, Vite</dd></div>
+            <div><dt>Móvil</dt><dd>React Native, Expo, Capacitor</dd></div>
+            <div><dt>Datos</dt><dd>PostgreSQL, MySQL, Supabase</dd></div>
+            <div><dt>Herramientas</dt><dd>Git, GitHub, Docker, Stripe, Cloudflare</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <h2>¿Hablamos?</h2>
+        <p>Busco prácticas o una primera oportunidad como desarrollador web en Madrid o en remoto.</p>
+      </div>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:esuareziniguez@gmail.com">esuareziniguez@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/enrique-suarez-i%C3%B1iguez">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/Quiquesuarez">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Imagen ampliada">
+    <form method="dialog"><button class="lightbox-close" aria-label="Cerrar">×</button></form>
+    <img alt="">
+  </dialog>
+
+  <script src="main.js"></script>
+</body>
+</html>
